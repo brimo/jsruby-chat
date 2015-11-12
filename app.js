@@ -1,12 +1,15 @@
 angular.module('jsrubyChat', [])
 
 .controller('MainCtrl', ['$scope', function($scope) {
-	$scope.chatarea = '';
+	$scope.messages = [{name: 'Tamer', text:'Test'}];
+
 	$scope.postMessage = function(){
+		// validate message and name
 		if (!$scope.message || $scope.message === '' || !$scope.name || $scope.name === '') {
 			return;
 		}
-		$scope.chatarea +=  $scope.name + ': ' + $scope.message + '\n';
+		$scope.messages.push({name: $scope.name, text: $scope.message})
+		// reset message field
 		$scope.message = '';
 	}
 }]);
