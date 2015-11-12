@@ -36,4 +36,5 @@ group :development do
   gem 'spring'
 end
 gem 'angular-rails-templates'
+gem 'sprockets', '2.12.3'
 
