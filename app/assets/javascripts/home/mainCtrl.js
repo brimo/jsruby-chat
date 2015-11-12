@@ -1,16 +1,4 @@
-angular.module('jsrubyChat', ['ui.router', 'templates'])
-
-.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-	$stateProvider
-		.state('home', {
-			url: '/home',
-			templateUrl: 'home/_home.html',
-			controller: 'MainCtrl'
-		});
-
-	$urlRouterProvider.otherwise('home');
-}])
-
+angular.module('jsrubyChat')
 
 .controller('MainCtrl', ['$scope', 'messages', function($scope, messages) {
 	$scope.messages = messages;
@@ -26,4 +14,4 @@ angular.module('jsrubyChat', ['ui.router', 'templates'])
 		// reset message field
 		$scope.message = '';
 	}
-}]);
+}])
