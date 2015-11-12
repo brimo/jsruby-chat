@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JsrubyChat</title>
+  <title>Jsruby Chat</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body ng-app="jsrubyChat" ng-controller="MainCtrl">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <ui-view></ui-view>
+        </div>
+    </div>
+    <script type="text/ng-template" id="/home.html">
+        <div class="page-header">
+            <h1>JS Ruby Chat</h1>
+        </div>
+        <div>
+            <div ng-repeat="msg in messages">
+                <blockquote>
+                    <p>{{msg.text}}</p>
+                    <footer>{{msg.name}}</footer>
+                </blockquote>
+            </div>
+            <form ng-submit="postMessage()" class="form-inline">
+                <input type="text" ng-model="name" class="form-control" placeholder='Your Name' required></input>
+                <input type="text" ng-model="message" class="form-control" placeholder='Message' required></input>
+                <button type="submit" class="btn btn-success">Send!</button>
+            </form>
+        </div>
+    </script>
+    <style type="text/css">
+    blockquote {
+        padding: 1px 10px;
+        margin: 0 0 10px;
+        font-size: 14.5px;
+        border-left: 5px solid #eee;
+    }
+    </style>
 </body>
 </html>
