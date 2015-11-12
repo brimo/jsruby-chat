@@ -11,7 +11,7 @@ This is a public one conversation chat application where anyone can see the list
 * [Bower] - to manage my front end dependencies
 * [Rails] - my backend
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
+* [node.js] - to install bower
 * [Sqlite] - database
 
 
