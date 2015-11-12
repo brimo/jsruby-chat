@@ -54,4 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root to: 'application#angular'
+  resources :messages, only: [:create, :index] do
+  end
 end
