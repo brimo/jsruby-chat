@@ -1,2 +1,2 @@
 # jsruby-chat
-A minimal chat application build with AngularJS and Ruby On Rails
+A minimal chat application built with AngularJS and Ruby On Rails
