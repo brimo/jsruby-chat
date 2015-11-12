@@ -12,4 +12,3 @@ class MessagesController < ApplicationController
 		params.require(:message).permit(:name, :text)
 	end
 end
-end

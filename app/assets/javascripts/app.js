@@ -5,7 +5,12 @@ angular.module('jsrubyChat', ['ui.router', 'templates'])
 		.state('home', {
 			url: '/home',
 			templateUrl: 'home/_home.html',
-			controller: 'MainCtrl'
+			controller: 'MainCtrl',
+			resolve: {
+				postPromise: ['messages', function(messages) {
+					return messages.getAll();
+				}]
+			}
 		});
 
 	$urlRouterProvider.otherwise('home');
